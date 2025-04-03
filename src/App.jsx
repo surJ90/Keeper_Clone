@@ -21,6 +21,10 @@ function App() {
     })
   }
 
+  function onEdit(editedNote) {
+    setNotes(notes.map((note) => (note.id === editedNote.id ? editedNote : note)))
+  }
+
   return (
     <>
       <Header />
@@ -33,6 +37,7 @@ function App() {
         title={note.title}
         content={note.content}
         deleteNote={deleteNote}
+        onEdit={onEdit}
       />
       )}
       <Footer />

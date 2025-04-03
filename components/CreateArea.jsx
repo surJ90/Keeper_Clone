@@ -1,7 +1,6 @@
 import { useState } from "react";
 import AddIcon from '@mui/icons-material/Add';
-import { Fab } from "@mui/material";
-import { Zoom } from "@mui/material";
+import { Fab, Zoom, Tooltip } from "@mui/material";
 
 function CreateArea(props) {
     const [isClicked, setIsClicked] = useState(false);
@@ -42,7 +41,9 @@ function CreateArea(props) {
                         props.addNote(newNote);
                         setNewNote({ title: "", content: "" });
                     }}>
-                        <AddIcon />
+                        <Tooltip title="Add">
+                            <AddIcon />
+                        </Tooltip>
                     </Fab>
                 </Zoom>
 
